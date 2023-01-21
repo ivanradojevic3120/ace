@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container col-lg-2 col-lg-12">
+<div class="my-5">
+    <h3>Add Organization</h3>
+</div>
+<form action="{{ url_for('render_addpromo') }}" method="POST">
+    <div class="form-group">
+        <label for="name">Ime</label>
+        <input type="text" class="form-control" name="name" required style="width: 600px;"> 
+    </div>
+    <div class="form-group"> 
+        <label for="godina">Godina Startovanja</label>
+        <input type="text" class="form-control" name="godina" required style="width: 600px;"> 
+    </div>
+    <div class="form-group"> 
+        <label for="sport">Sport</label>
+        <input type="text" class="form-control" name="sport" required style="width: 600px;"> 
+    </div>
+    <div class="form-group"> 
+        <label for="boss">C.E.O.</label>
+        <input type="text" class="form-control" name="boss" required style="width: 600px;"> 
+    </div>
+    
+   
+    <input type="submit" value="Sacuvaj" class="btn btn-danger">
+</form>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container col-lg-2 col-lg-12">
+<div class="my-5">
+    <h3>Change Fighter</h3>
+</div>
+<form action={{ url_for('render_izmena',id=fighter.id) }} method="POST">
+    <div class="form-group">
+        <label for="ime">Ime</label>
+        <input type="text" class="form-control" name="ime" value={{ fighter.ime }} required style="width: 600px;"> 
+    </div>
+    <div class="form-group">
+        <label for="prezime">Prezime</label>
+        <input type="text" class="form-control" name="prezime" value={{ fighter.prezime }} required style="width: 600px;"> 
+    </div>
+    <div class="form-group"> 
+        <label for="email">E-mail</label>
+        <input type="text" class="form-control" name="email" value={{ fighter.email }} required style="width: 600px;"> 
+    </div>
+    <div class="form-group"> 
+        <label for="email">Godina Rodjenja</label>
+        <input type="text" class="form-control" name="godina" value={{ fighter.godina }} required style="width: 600px;"> 
+    </div>
+    <div class="form-group"> 
+        <label for="email">Kategorija</label>
+        <input type="text" class="form-control" name="kategorija" value={{ fighter.kategorija }} required style="width: 600px;"> 
+    </div>
+    <div class="form-group">
+        <select name="rola" class="form-control" style="width: 600px;">
+            <option value="" {% if fighter.rola=="" %} selected {% endif %} disabled>Izaberite rolu</option>
+            <option value="administrator"{% if fighter.rola=="Administrator" %} selected {% endif %}>Administrator</option>
+            <option value="fighter" {% if fighter.rola=="fighter" %} selected {% endif %}>fighter</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" name="password" required style="width: 600px;"> 
+    </div>
+    <input type="submit" value="Sacuvaj" class="btn btn-danger">
+</form>
+</div>
+
+
+
+
+
+
+{% endblock %}
